@@ -1,17 +1,26 @@
 import { BiHomeAlt } from "react-icons/bi";
+import { HiCode } from "react-icons/hi";
+const Icons = (props) => {
+  return (
+    <>
+      {" "}
+      <p>{props.iconName}</p>
+      <p>{props.title}</p>
+    </>
+  );
+};
 
 const Sidenav = () => {
   return (
     <>
       <nav>
-        <ul>
-          <li className="icon">
-            <p>
-              <BiHomeAlt />
-            </p>{" "}
-            <p>Home</p>
-          </li>
-        </ul>
+        <div className="icon">
+          <Icons iconName={<BiHomeAlt />} title="Home" />
+        </div>
+
+        <div className="icon">
+          <Icons iconName={<HiCode />} title="Courses" />
+        </div>
       </nav>
       <style jsx>
         {`
@@ -20,19 +29,19 @@ const Sidenav = () => {
             background: red;
           }
 
-          ul {
-            list-style-type: none;
-          }
           .icon p {
             font-weight: light;
+            font-size: 2rem;
+            margin-left:2rem
           }
 
-          li {
+          .icon {
             display: flex;
             flex-direction: row;
 
-            justify-content: space-between;
+            
           }
+\
         `}
       </style>
     </>
